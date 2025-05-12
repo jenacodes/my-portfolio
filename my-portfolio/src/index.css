@@ -4,6 +4,7 @@
 @theme {
   --color-background-color: #1f1f38;
   --color-primary: #4db5ff;
+  --color-bg-variant: #2c2c6c;
 }
 
 body {
@@ -11,4 +12,14 @@ body {
   background-color: var(--color-background-color);
   color: #ffffff;
   line-height: 1.7;
+}
+
+section > h2 {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+section > h5 {
+  text-align: center;
+  color: gray;
 }
