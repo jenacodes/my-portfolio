@@ -1,4 +1,5 @@
 import About from "./sections/About";
+import Experience from "./sections/Experience";
 import Header from "./sections/Header";
 import Nav from "./sections/Nav";
 
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Nav />
       <About />
+      <Experience />
     </>
   );
 }

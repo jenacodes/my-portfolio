@@ -3,6 +3,8 @@ import { LuUsers } from "react-icons/lu";
 import { GoProjectSymlink } from "react-icons/go";
 import InfoCard from "../components/InfoCard";
 
+import SecondButton from "../components/SecondButton";
+
 const About = () => {
   return (
     <section className="mt-32">
@@ -18,12 +20,12 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="text-center">
+        <div className="text-center lg:text-left">
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-3">
             <InfoCard
               Icon={SlBadge}
               title={"Experience"}
-              description={"1+ Year Working Experience"}
+              description={"2+ Year Working Experience"}
             />
             <InfoCard
               Icon={LuUsers}
@@ -36,6 +38,19 @@ const About = () => {
               description={"20+ Completed Projects"}
             />
           </div>
+          <p className="text-sm my-6 text-gray-400 text-center lg:text-left">
+            I'm a highly motivated and experienced software developer with a
+            passion for creating innovative solutions. With over 2 years of
+            experience in the industry, I have a proven track record of
+            delivering high-quality projects on time and within budget. My
+            expertise lies in web development, where I have honed my skills in
+            various programming languages and frameworks. I thrive in fast-paced
+            environments and enjoy collaborating with cross-functional teams to
+            bring ideas to life. I am always eager to learn and stay updated
+            with the latest technologies to ensure that I can provide the best
+            solutions for my clients.
+          </p>
+          <SecondButton text={"Let's talk"} />
         </div>
       </div>
     </section>
