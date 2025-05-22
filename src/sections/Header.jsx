@@ -10,7 +10,7 @@ import { PiLineVertical } from "react-icons/pi";
 const socials = [
   { name: "LinkedIn", Icon: FaLinkedin, url: "https://linkedin.com/…" },
   { name: "GitHub", Icon: FaGithub, url: "https://github.com/…" },
-  { name: "X", Icon: FaXTwitter, url: "https://x.com/…" },
+  { name: "X", Icon: FaXTwitter, url: "https://x.com/kingjenathe7th" },
   { name: "line", Icon: PiLineVertical },
 ];
 
@@ -23,7 +23,11 @@ const Header = () => {
         <h5 className="text-gray-400 text-xs my-5">Full‑Stack Developer</h5>
 
         <div className="flex justify-center gap-4 mt-10">
-          <BlueButton text={"Download CV"} />
+          <BlueButton
+            text={"Download CV"}
+            href="\JENAKUMO EMMANUEL CV.pdf"
+            download="JENAKUMO EMMANUEL CV.pdf"
+          />
           <SecondButton text={"Let's Talk"} />
         </div>
 
@@ -54,7 +58,7 @@ const Header = () => {
         </div>
         <div className="h-[30rem] mt-16  absolute w-[18rem]  left-[calc(50%-9rem)]">
           <img
-            src="images/gratisography-augmented-reality.jpg"
+            src="images/cartoon-me.png"
             alt=""
             className="h-[100%] object-cover w-[100%] [border-radius:12rem_12rem_0_0] "
           />

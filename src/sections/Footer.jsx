@@ -1,14 +1,15 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   const navLinks = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Services", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", to: "home" },
+    { label: "About", to: "about" },
+    { label: "Experience", to: "skills" },
+    { label: "Services", to: "services" },
+    { label: "Portfolio", to: "home" },
+    { label: "Testimonials", to: "testimonials" },
+    { label: "Contact", to: "contact" },
   ];
 
   const socialLinks = [
@@ -24,12 +25,17 @@ const Footer = () => {
       <ul className="flex flex-col lg:flex-row justify-center gap-8 mt-4 mb-12 text-bg-variant">
         {navLinks.map((link) => (
           <li key={link.label}>
-            <a
-              href={link.href}
+            <Link
+              key={link.name}
               className="hover:text-white transition-all duration-200"
+              smooth={true}
+              duration={500}
+              offset={-100}
+              spy={true}
+              to={link.to}
             >
               {link.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
