@@ -2,11 +2,13 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { motion as Motion } from "framer-motion";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import Reveal from "../Reveal";
 
 const data = [
   {
@@ -35,8 +37,16 @@ const data = [
 const Testimonials = () => {
   return (
     <section className="mt-32 px-4 md:px-8 lg:px-16" id="testimonials">
-      <h5 className="">Review from clients</h5>
-      <h2 className="text-xl font-semibold text-center mb-8">Testimonials</h2>
+      <div>
+        <Reveal delay={0}>
+          <h5 className="">Review from clients</h5>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <h2 className="text-xl font-semibold text-center mb-8">
+            Testimonials
+          </h2>
+        </Reveal>
+      </div>
 
       {/* Add relative positioning to the container */}
       <div className="max-w-xl mx-auto relative pb-16">
@@ -61,15 +71,26 @@ const Testimonials = () => {
           {data.map(({ id, avatar, name, review }) => (
             <SwiperSlide key={id}>
               <article className="bg-bg-variant rounded-2xl p-6 flex flex-col items-center text-center shadow-md h-full">
-                <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+                <Motion.div
+                  key={id}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: id * 0.2 }}
+                  viewport={{ once: true }}
+                  className="w-24 h-24 rounded-full overflow-hidden mb-4"
+                >
                   <img
                     src={avatar}
                     alt={`${name} avatar`}
                     className="object-cover w-full h-full"
                   />
-                </div>
-                <h3 className="text-xs mb-2">{name}</h3>
-                <p className="text-gray-600 text-sm">{review}</p>
+                </Motion.div>
+                <Reveal delay={0.2}>
+                  <h3 className="text-xs mb-2">{name}</h3>
+                </Reveal>
+                <Reveal delay={0.3}>
+                  <p className="text-gray-600 text-sm">{review}</p>
+                </Reveal>
               </article>
             </SwiperSlide>
           ))}

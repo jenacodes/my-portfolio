@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { motion as Motion } from "framer-motion";
 
 const Footer = () => {
   const navLinks = [
@@ -17,16 +18,51 @@ const Footer = () => {
     { icon: FaLinkedin, href: "https://www.linkedin.com/in/jenacodes/" },
     { icon: FaTwitter, href: "https://x.com/kingjenathe7th" },
   ];
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i = 1) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  const stagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
   return (
     <footer className="bg-primary mt-28 py-12 text-center text-sm" id="footer">
-      <a href="#" className="text-2xl uppercase text-bg-variant font-bold">
+      <Motion.a
+        href="#"
+        className="text-2xl uppercase text-bg-variant font-bold"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         JENA_CODES
-      </a>
-      <ul className="flex flex-col lg:flex-row justify-center gap-8 mt-4 mb-12 text-bg-variant">
-        {navLinks.map((link) => (
-          <li key={link.label}>
+      </Motion.a>
+      <Motion.ul
+        className="flex flex-col lg:flex-row justify-center gap-8 mt-4 mb-12 text-bg-variant"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={stagger}
+      >
+        {navLinks.map((link, index) => (
+          <Motion.li key={link.label} variants={fadeInUp} custom={index}>
             <Link
-              key={link.name}
               className="hover:text-white transition-all duration-200"
               smooth={true}
               duration={500}
@@ -36,26 +72,43 @@ const Footer = () => {
             >
               {link.label}
             </Link>
-          </li>
+          </Motion.li>
         ))}
-      </ul>
-      <div className="flex justify-center mb-16">
-        {socialLinks.map((link) => {
+      </Motion.ul>
+
+      <Motion.div
+        className="flex justify-center mb-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={stagger}
+      >
+        {socialLinks.map((link, index) => {
           const Icon = link.icon;
           return (
-            <a
-              key={link.href}
+            <Motion.a
+              key={link.href || index}
               href={link.href}
+              variants={fadeInUp}
+              custom={index}
               className="text-bg-variant text-2xl hover:text-white transition-all duration-200 mx-2"
             >
               <Icon />
-            </a>
+            </Motion.a>
           );
         })}
-      </div>
-      <p className="mb-16 text-bg-variant">
+      </Motion.div>
+
+      <Motion.p
+        className="mb-16 text-bg-variant"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+        custom={4}
+      >
         &copy; {new Date().getFullYear()} Jena Codes. All rights reserved.
-      </p>
+      </Motion.p>
     </footer>
   );
 };

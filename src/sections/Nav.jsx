@@ -1,15 +1,15 @@
 import { LiaHomeSolid } from "react-icons/lia";
 import { CiUser } from "react-icons/ci";
 import { PiReadCvLogoFill } from "react-icons/pi";
-import { FaHeartPulse } from "react-icons/fa6";
+import { FaSuperpowers } from "react-icons/fa";
 import { AiOutlineMessage } from "react-icons/ai";
 import { Link } from "react-scroll";
 
 const NavItems = [
   { name: "Home", icon: LiaHomeSolid, to: "home" },
   { name: "About", icon: CiUser, to: "about" },
-  { name: "Skills", icon: PiReadCvLogoFill, to: "skills" },
-  { name: "Projects", icon: FaHeartPulse, to: "projects" },
+  { name: "Skills", icon: FaSuperpowers, to: "skills" },
+  { name: "Projects", icon: PiReadCvLogoFill, to: "projects" },
   { name: "Contact", icon: AiOutlineMessage, to: "contact" },
 ];
 const Nav = () => {

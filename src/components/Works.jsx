@@ -9,6 +9,7 @@ const Works = ({ image, text, description, githubLink, demoLink }) => {
           src={image}
           alt={text}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+          loading="lazy"
         />
       </div>
       <h3 className="text-sm font-semibold text-blue-500 my-5 mx-1 line-clamp-2">
