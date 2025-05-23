@@ -76,6 +76,7 @@ const About = () => {
             <SecondButton
               text={"Download CV"}
               href="\JENAKUMO EMMANUEL CV.pdf"
+              download="JENAKUMO EMMANUEL CV.pdf"
             />
           </Reveal>
         </div>

@@ -7,6 +7,7 @@ import { IconContext } from "react-icons";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { PiLineVertical } from "react-icons/pi";
+import { Link } from "react-scroll";
 
 const socials = [
   { name: "LinkedIn", Icon: FaLinkedin, url: "https://linkedin.com/…" },
@@ -33,10 +34,13 @@ const Header = () => {
           <div className="flex justify-center gap-4 mt-10">
             <BlueButton
               text={"Download CV"}
-              href="\JENAKUMO EMMANUEL CV.pdf"
+              href="/JENAKUMO EMMANUEL CV.pdf"
               download="JENAKUMO EMMANUEL CV.pdf"
             />
-            <SecondButton text={"Let's Talk"} />
+            <SecondButton
+              text={"Let's Talk"}
+              url={"https://x.com/kingjenathe7th"}
+            />
           </div>
         </Reveal>
 
@@ -76,12 +80,16 @@ const Header = () => {
             />
           </div>
         </Reveal>
-        <a
-          href=""
+        <Link
+          to="footer"
+          smooth={true}
+          duration={500}
+          offset={-100}
+          spy={true}
           className="hidden md:block bottom-20 absolute text-sm text-primary  right-[-2.3rem] transform rotate-90 hover:text-white transition-all"
         >
           Scroll down
-        </a>
+        </Link>
       </div>
     </header>
   );
