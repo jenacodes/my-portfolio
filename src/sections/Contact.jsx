@@ -3,6 +3,7 @@ import { CiMail } from "react-icons/ci";
 import { FaTwitter } from "react-icons/fa";
 import Reveal from "../Reveal";
 import { motion as Motion } from "framer-motion";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
   const contactOptions = [
@@ -41,6 +42,15 @@ const Contact = () => {
       },
     },
   };
+
+  const [state, handleSubmit] = useForm("mgvkbrpj");
+  if (state.succeeded) {
+    return (
+      <p className="text-center font-bold text-primary">
+        Thanks for submitting
+      </p>
+    );
+  }
 
   return (
     <section className="mt-32 px-4 md:px-8 lg:px-16" id="contact">
@@ -88,7 +98,8 @@ const Contact = () => {
         </Motion.div>
 
         <Motion.form
-          action="https://formspree.io/f/xjvjlqzj"
+          action=""
+          onSubmit={handleSubmit}
           method="POST"
           className="flex flex-col gap-4"
           variants={fadeIn}
@@ -110,6 +121,7 @@ const Contact = () => {
             required
             className="p-2 border border-gray-300 rounded-md"
           />
+          <ValidationError field="email" prefix="Email" errors={state.errors} />
           <textarea
             name="message"
             rows="4"
@@ -117,8 +129,15 @@ const Contact = () => {
             required
             className="p-2 border border-gray-300 rounded-md"
           ></textarea>
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
+
           <button
             type="submit"
+            disabled={state.submitting}
             className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200 ease-in-out"
           >
             Send Message
