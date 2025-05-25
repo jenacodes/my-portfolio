@@ -61,7 +61,7 @@ const About = () => {
           <Reveal delay={0.4}>
             <p className="text-sm my-6 text-gray-400 text-center lg:text-left">
               I'm a highly motivated and experienced software developer with a
-              passion for creating innovative solutions. With over 2 years of
+              passion for creating innovative solutions. With over 3+ years of
               experience in the industry, I have a proven track record of
               delivering high-quality projects on time and within budget. My
               expertise lies in web development, where I have honed my skills in
