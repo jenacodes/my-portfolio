@@ -12,6 +12,14 @@ const projects = [
     demoLink: "https://netflux-eta.vercel.app/",
   },
   {
+    image: "images/ndustudenthub.png",
+    text: "NduStudentHub",
+    description:
+      "ndustudenthub – A student information and blog platform for Niger Delta University, built with Next.js, Sanity CMS, and Tailwind CSS, featuring dynamic content, events, news, and resources in a clean, responsive design",
+    githubLink: "https://github.com/jenacodes/ndustudenthub",
+    demoLink: "https:ndustudenthub.com",
+  },
+  {
     image: "images/Exness.png",
     text: "Exness",
     description:

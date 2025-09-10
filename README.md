@@ -1,10 +1,10 @@
-# Jenakumo Emmanuel - FullStack Developer Portfolio
+# Jenakumo Emmanuel - Frontend Developer Portfolio
 
 My portfolio
 
 ## Features
 
-- Full-screen header section introducing Jenakumo Emmanuel as a FullStack developer
+- Full-screen header section introducing Jenakumo Emmanuel as a Frontend developer
 - Two call-to-action buttons:
   - **Download CV**: Link to download the developer's CV (link to be added)
   - **Let's Talk**: Link to contact or start a conversation (link to be added)
