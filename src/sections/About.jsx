@@ -75,8 +75,8 @@ const About = () => {
           <Reveal delay={0.5}>
             <SecondButton
               text={"Download CV"}
-              href="\JENAKUMO EMMANUEL CV.pdf"
-              download="JENAKUMO EMMANUEL CV.pdf"
+              href="/JENAKUMO EMMANUEL CV(1).pdf"
+              download="JENAKUMO EMMANUEL CV(1).pdf"
             />
           </Reveal>
         </div>

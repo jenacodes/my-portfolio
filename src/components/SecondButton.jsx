@@ -1,7 +1,7 @@
-const SecondButton = ({ text, url, download = undefined }) => {
+const SecondButton = ({ text, href = "#", download = undefined }) => {
   return (
     <a
-      href={url}
+      href={href}
       download={download}
       className="text-background-color cursor-pointer inline-flex border border-primary py-3 px-5 rounded-sm bg-primary transition-all hover:bg-white"
     >

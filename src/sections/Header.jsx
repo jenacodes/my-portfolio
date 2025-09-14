@@ -34,8 +34,8 @@ const Header = () => {
           <div className="flex justify-center gap-4 mt-10">
             <BlueButton
               text={"Download CV"}
-              href="/JENAKUMO EMMANUEL CV.pdf"
-              download="JENAKUMO EMMANUEL CV.pdf"
+              href="/JENAKUMO EMMANUEL CV(1).pdf"
+              download="JENAKUMO EMMANUEL CV(1).pdf"
             />
             <SecondButton
               text={"Let's Talk"}
