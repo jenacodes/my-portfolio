@@ -18,7 +18,7 @@ const Works = ({ image, text, description, githubLink, demoLink }) => {
       <p className="text-gray-400 text-xs mb-3.5">{description}</p>
       <div className="flex gap-4 mt-auto">
         <BlueButton text="GitHub " href={githubLink} />
-        {demoLink && <SecondButton text="Live Demo" url={demoLink} />}
+        {demoLink && <SecondButton text="Live Demo" href={`${demoLink}`} />}
       </div>
     </article>
   );
